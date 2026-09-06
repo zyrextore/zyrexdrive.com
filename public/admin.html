@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZYREX Admin</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<main class="section">
+  <div id="login">
+    <span class="eyebrow">ZYREX ADMIN</span><h1 style="font-size:60px;letter-spacing:-.06em">Control Center<span>.</span></h1>
+    <div class="modal-box" style="margin-top:25px">
+      <input id="user" placeholder="Username" value="admin">
+      <input id="pass" type="password" placeholder="Password">
+      <button class="btn primary" id="loginBtn">LOGIN</button>
+      <p id="loginMsg"></p>
+    </div>
+  </div>
+  <div id="dash" style="display:none">
+    <div class="section-head"><span class="eyebrow">ADMIN DASHBOARD</span><h2>Overview.</h2></div>
+    <div class="cards three">
+      <article><span>ORDERS</span><h3 id="total">0</h3><p>Total orders</p></article>
+      <article><span>REVENUE</span><h3 id="revenue">Rp0</h3><p>Completed revenue</p></article>
+      <article><span>PROJECTS</span><h3 id="projects">0</h3><p>Portfolio projects</p></article>
+    </div>
+    <div style="margin-top:35px">
+      <h3>Orders</h3><div id="orders"></div>
+    </div>
+    <button class="btn" id="logout" style="margin-top:25px">Logout</button>
+  </div>
+</main>
+<script>
+let token=localStorage.getItem("zyrexAdminToken");
+const money=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
+async function api(url,opt={}){opt.headers={...(opt.headers||{}),Authorization:"Bearer "+token};return fetch(url,opt)}
+async function dashboard(){
+  const s=await api("/api/admin/stats");if(!s.ok)return;
+  const d=await s.json();document.querySelector("#total").textContent=d.totalOrders;document.querySelector("#revenue").textContent=money(d.revenue);document.querySelector("#projects").textContent=d.projects;
+  const o=await api("/api/admin/orders");const list=await o.json();
+  document.querySelector("#orders").innerHTML=list.length?list.map(x=>`<article class="cards" style="margin:10px 0;padding:18px;border:1px solid var(--line);border-radius:14px"><b>${x.id}</b><span>${x.productName} — ${money(x.price)}</span><small>${x.customerName} • ${x.customerContact}</small><select onchange="changeStatus('${x.id}',this.value)"><option ${x.status==="Pending"?"selected":""}>Pending</option><option ${x.status==="Processing"?"selected":""}>Processing</option><option ${x.status==="Completed"?"selected":""}>Completed</option><option ${x.status==="Cancelled"?"selected":""}>Cancelled</option></select></article>`).join(""):"<p style='color:#777'>Belum ada order.</p>";
+}
+async function changeStatus(id,status){await api("/api/admin/orders/"+id,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({status})});dashboard()}
+async function login(){
+  const r=await fetch("/api/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:document.querySelector("#user").value,password:document.querySelector("#pass").value})});
+  const d=await r.json();if(!r.ok)return document.querySelector("#loginMsg").textContent=d.error;
+  localStorage.setItem("zyrexAdminToken",d.token);token=d.token;show();
+}
+function show(){document.querySelector("#login").style.display="none";document.querySelector("#dash").style.display="block";dashboard()}
+document.querySelector("#loginBtn").onclick=login;document.querySelector("#logout").onclick=()=>{localStorage.removeItem("zyrexAdminToken");location.reload()};if(token)show();
+</script>
+</body></html>

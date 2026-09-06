@@ -1,0 +1,18 @@
+{
+  "phase": 3,
+  "runtime": "GLB/GLTF + Three.js",
+  "vehicles": [
+    {"id":"fortuner_legender","name":"Toyota Fortuner Legender 2020","file":"/assets/vehicles/2020_toyota_fortuner_legender.glb","type":"car","maxKmh":185,"drive":"RWD","audio":"diesel"},
+    {"id":"e30_stance","name":"BMW M3 E30 Stance","file":"/assets/vehicles/bmw_m3_coupe_e30_stance_style.glb","type":"car","maxKmh":205,"drive":"RWD","audio":"sport"},
+    {"id":"e92_stance","name":"BMW M3 E92 Stance","file":"/assets/vehicles/bmw_m3_e92_stance.glb","type":"car","maxKmh":235,"drive":"RWD","audio":"sport"},
+    {"id":"e30_racing","name":"BMW M3 E30 Racing","file":"/assets/vehicles/bmw_modified_racing_car__bmw_m3_e30.glb","type":"car","maxKmh":220,"drive":"RWD","audio":"race"},
+    {"id":"s1000rr","name":"BMW S1000RR","file":"/assets/vehicles/bmw_s1000_rr.glb","type":"bike","maxKmh":299,"drive":"RWD","audio":"bike"},
+    {"id":"diesel_family","name":"Diesel Family Car","file":"/assets/vehicles/diesel_family_car (1).glb","type":"car","maxKmh":175,"drive":"FWD","audio":"diesel"},
+    {"id":"mustang_gt3","name":"Ford Mustang GT3","file":"/assets/vehicles/ford_mustang_gt3__www.vecarz.com.glb","type":"car","maxKmh":285,"drive":"RWD","audio":"race"},
+    {"id":"aerox","name":"Yamaha Aerox Modified 155","file":"/assets/vehicles/yamaha_aerox_modified_155.glb","type":"bike","maxKmh":145,"drive":"RWD","audio":"scooter"},
+    {"id":"work_head","name":"Work Carving Head 40","file":"/assets/vehicles/work_carving_head_40.glb","type":"car","maxKmh":190,"drive":"RWD","audio":"sport"},
+    {"id":"yabaking","name":"Yabaking Mesh","file":"/assets/vehicles/yabaking_mesh.glb","type":"car","maxKmh":180,"drive":"FWD","audio":"sport"}
+  ],
+  "environment": [{"id":"warung_nasi_padang","name":"Warung Nasi Padang","file":"/assets/environment/warung_nasi_padang.glb"}],
+  "sources": {"fbx":["sv4.fbx","kenalpot jawir.fbx"],"rbxm":"reference-only"}
+}

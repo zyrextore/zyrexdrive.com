@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZYREX — Digital Technology & Development Studio.">
+  <title>ZYREX — Build. Create. Deliver.</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#home">ZYREX<span>.</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  <nav id="navMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#technology">Technology</a>
+    <a href="#store">Store</a>
+    <a href="#game">Game</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero section">
+  <div class="hero-copy">
+    <span class="eyebrow">DIGITAL TECHNOLOGY & DEVELOPMENT STUDIO</span>
+    <h1>BUILD.<br>CREATE.<br><span>DELIVER.</span></h1>
+    <p>We build modern websites, software, servers, bots, automation, and game technology.</p>
+    <div class="actions">
+      <a class="btn primary" href="#store">Explore Store</a>
+      <a class="btn ghost" href="/game">Play 3D Drive</a>
+      <a class="btn ghost" href="#contact">Let's Build</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="orb"></div>
+    <div class="hero-grid"></div>
+    <div class="terminal">
+      <span>ZYREX_SYSTEM</span>
+      <b>ONLINE</b>
+      <small>BUILD • CREATE • DELIVER</small>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="section-head"><span class="eyebrow">ABOUT ZYREX</span><h2>Technology with purpose.</h2><p>ZYREX focuses on practical digital products with clean interfaces, scalable systems, and reliable delivery.</p></div>
+  <div class="cards three">
+    <article><b>Fast Development</b><p>Efficient workflows from idea to usable product.</p></article>
+    <article><b>Custom Solutions</b><p>Solutions shaped around each project's needs.</p></article>
+    <article><b>Scalable Systems</b><p>Architecture prepared for future growth.</p></article>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-head"><span class="eyebrow">SERVICES</span><h2>What we build.</h2></div>
+  <div class="cards three">
+    <article><span>01</span><h3>Web Development</h3><p>Website, landing page, portfolio, dashboard, web app and API integration.</p></article>
+    <article><span>02</span><h3>Server & Cloud</h3><p>VPS, hosting, game server, Pterodactyl, Linux and server optimization.</p></article>
+    <article><span>03</span><h3>Bot & Automation</h3><p>WhatsApp bot, Telegram bot, automation and custom API integration.</p></article>
+    <article><span>04</span><h3>Software Development</h3><p>Custom software, authentication, database and system development.</p></article>
+    <article><span>05</span><h3>Game Development</h3><p>Gameplay systems, Unreal Engine development and multiplayer integration.</p></article>
+    <article><span>06</span><h3>Design</h3><p>UI/UX, branding, dashboard design, graphic and motion design.</p></article>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-head"><span class="eyebrow">SELECTED WORK</span><h2>Projects.</h2></div>
+  <div class="cards three">
+    <article><span>WEB</span><h3>ZYREX Portfolio</h3><p>Premium responsive technology portfolio.</p></article>
+    <article><span>SERVER</span><h3>Server Control</h3><p>Modern server management concept.</p></article>
+    <article><span>GAME</span><h3>Cyber Dodge</h3><p>Lightweight browser game built with Canvas.</p></article>
+  </div>
+</section>
+
+<section id="technology" class="section">
+  <div class="section-head"><span class="eyebrow">TECHNOLOGY</span><h2>Built with modern tools.</h2></div>
+  <div class="tech-list">
+    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>API</span><span>Database</span><span>Linux</span><span>Git</span><span>VPS</span><span>Pterodactyl</span><span>Unreal Engine</span>
+  </div>
+</section>
+
+<section id="store" class="section">
+  <div class="section-head"><span class="eyebrow">ZYREX STORE</span><h2>Digital services.</h2><p>Choose a service and create an order.</p></div>
+  <div class="store-tools">
+    <input id="search" type="search" placeholder="Search product...">
+    <select id="category"><option value="All">All</option><option>Web</option><option>Server</option><option>Bot</option><option>Software</option><option>Game</option></select>
+  </div>
+  <div id="products" class="cards three"></div>
+</section>
+
+<section id="game" class="section">
+  <div class="section-head"><span class="eyebrow">ZYREX LAB</span><h2>Cyber Dodge + 3D Drive.</h2><p>Cyber Dodge tetap tersedia. Untuk driving 3D, buka ZYREX Drive tanpa mengganggu fitur website lama.</p></div>
+  <div class="game-wrap">
+    <div class="game-top">
+      <div><small>SCORE</small><strong id="score">0</strong></div>
+      <div><small>BEST</small><strong id="best">0</strong></div>
+      <button class="btn primary" id="start">START GAME</button>
+    </div>
+    <canvas id="cyberGame" width="720" height="420"></canvas>
+    <div class="controls">
+      <button data-key="left">←</button><button data-key="up">↑</button><button data-key="down">↓</button><button data-key="right">→</button>
+    </div>
+    <p class="hint">PC: WASD / Arrow Keys • HP: tombol arah. • <a href="/game">Open ZYREX Drive →</a></p>
+  </div>
+</section>
+
+<section id="why" class="section">
+  <div class="section-head"><span class="eyebrow">WHY ZYREX</span><h2>Simple. Fast. Focused.</h2></div>
+  <div class="cards three">
+    <article><b>Security Focused</b><p>Security-minded development from the beginning.</p></article>
+    <article><b>Responsive</b><p>Designed for phones, tablets and desktops.</p></article>
+    <article><b>Support</b><p>Built for maintenance and future upgrades.</p></article>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <span class="eyebrow">CONTACT</span><h2>LET'S BUILD SOMETHING GREAT.</h2>
+  <p>Need a website, server, bot, software, or game project?</p>
+  <button class="btn primary" onclick="alert('Contact integration siap dihubungkan ke WhatsApp / Telegram.')">Start a Project</button>
+</section>
+</main>
+
+<footer>© 2026 ZYREX. BUILD. CREATE. DELIVER.</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="close" id="close">×</button>
+    <h3>Create Order</h3>
+    <p id="selectedProduct"></p>
+    <input id="customerName" placeholder="Nama">
+    <input id="customerContact" placeholder="WhatsApp / Telegram">
+    <button class="btn primary" id="submitOrder">Create Order</button>
+    <div id="orderResult"></div>
+  </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
